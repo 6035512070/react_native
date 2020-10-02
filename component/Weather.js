@@ -15,7 +15,7 @@ export default function Weather(props) {
         console.log(`fetching data with zipCode = 83120`)
      if (props.zipCode) {              
 
-fetch(`http://api.openweathermap.org/data/2.5/weather?q=${83120},th&units=metric&APPID`)
+fetch(`http://api.openweathermap.org/data/2.5/weather?q=${props.zipCode},th&units=metric&APPID=${apiKey}`)
                 .then((response) => response.json())
                 .then((json) => {
                     setForecastInfo({

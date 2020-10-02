@@ -1,31 +1,34 @@
 import React from 'react';
-import { View, Text , StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 export default function Forecast(props) {
     return (
-        <View >
-            <Text>{props.main}</Text>
-            <Text>{props.description}</Text>
+        <View style={styles.center}>
+            <Text style={styles.medium}>{props.main}</Text>
+            <Text style={styles.small}>{props.description}</Text>
             <View>
-                <Text>{props.temp}</Text>
-                <Text>°C</Text>
+                <Text style={styles.medium}>
+                    <Text style={{fontSize: 40}}>{props.temp}</Text>
+                    <Text> °C</Text>
+                </Text>
             </View>
         </View>
     );
 }
+
 const styles = StyleSheet.create({
-    center : {
-        alignItems : 'center',
+    center: {
+        alignItems: 'center',
     },
     medium: {
-        frontSize : 50,
-        color : '#FFF',
-        marginTop :30
+        fontSize: 30,
+        color: '#FFF',
+        marginTop: 20,
     },
-        small :{
-            frontSize:30,
-            color:'#FFF',
-            marginTop:30,
-        }
-   
+    small: {
+        fontSize: 20,
+        color: '#FFF',
+        marginTop: 20,
+
+    }
 })
